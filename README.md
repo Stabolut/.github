@@ -25,7 +25,7 @@ Welcome to the official GitHub organization of **Stabolut**, a dual-stablecoin a
 └───────────┘      └───────────┘       └───────────┘       └───────────┘      └───────────┘
 ```
 
-### 📦 Public Repositories
+### 📦 Public Repositories & Tools
 
 | Repository | Description | Tech Stack | Status |
 | :--- | :--- | :--- | :---: |
@@ -36,6 +36,8 @@ Welcome to the official GitHub organization of **Stabolut**, a dual-stablecoin a
 | **[`Audit`](https://github.com/Stabolut/Audit)** | Full smart contract audit suite, Foundry unit tests, treasury engine, and architecture | Solidity, Foundry, Python | 🟢 Active |
 | **[`Whitepaper`](https://github.com/Stabolut/Whitepaper)** | LaTeX source and compiled PDF for the core Stabolut USB and SBL tokenomics | LaTeX, PDF | 🟢 Active |
 | **[`Whitepaper-Mica`](https://github.com/Stabolut/Whitepaper-Mica)** | LaTeX source and regulatory documentation for European MiCA compliance (ESB Token) | LaTeX, Markdown | 🟢 Active |
+| **[`BMEX_YieldCalc`](https://github.com/Stabolut/BMEX_YieldCalc)** | Zero-dependency Python engine for auditing BitMEX delta-neutral funding yields and APY | Python 3.10+ (Stdlib) | 🟢 Active |
+| **[`Sbl_executor`](https://github.com/Stabolut/Sbl_executor)** | High-performance real-time BitMEX orderbook depth visualizer (CLI + Desktop GUI) | Python, WebSockets, Tkinter | 🟢 Active |
 
 ---
 
