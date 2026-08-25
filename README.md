@@ -1,48 +1,70 @@
-# Stabolut - USB Token Ecosystem
+# Stabolut — Decentralized Stablecoin Ecosystem
 
-## Table of Contents
-- [Overview](#overview)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [API Endpoints](#api-endpoints)
-- [Usage](#usage)
-- [High-Level Process](#high-level-process)
-- [Contact](#contact)
+Welcome to the official GitHub organization of **Stabolut**, a dual-stablecoin and gasless payment ecosystem powered by the **USB Stablecoin** and **SBL Governance Token**.
 
-## Overview
-Stabolut's USB Token Ecosystem encompasses a comprehensive backend service and a mobile wallet application designed to manage USB, a specific cryptocurrency ecosystem. This ecosystem is built to support user wallet creation, fund transfers, staking, gasless transactions, and seamless integration with various blockchain networks, focusing on scalability, security, and user experience.
+---
 
-## Technologies Used
-- **Backend Framework:** Node.js with Express
-- **Database:** MongoDB
-- **Notification:** Firebase (for transaction notifications)
-- **Live Updates:** Socket.io
-- **Frontend (Mobile App):** React Native
+## 🏛️ Ecosystem Architecture & Repositories
 
-## Installation
-### Backend API
-1. Clone the repository: `git clone https://github.com/Stabolut/backend.git`
-2. Navigate to the project directory: `cd backend`
-3. Install dependencies: `npm install`
-4. Start the server: `npm run start`
+```
+                               ┌───────────────────────────┐
+                               │   STABOLUT ECOSYSTEM      │
+                               └─────────────┬─────────────┘
+                                             │
+      ┌──────────────────┬───────────────────┼───────────────────┬──────────────────┐
+      ▼                  ▼                   ▼                   ▼                  ▼
+┌───────────┐      ┌───────────┐       ┌───────────┐       ┌───────────┐      ┌───────────┐
+│  mobile   │      │  backend  │       │ frontend  │       │smartcontr.│      │   Audit   │
+│React Native│     │NodeJS API │       │ React Web │       │Solidity   │      │ Contracts │
+│Wallet App │      │& Relayer  │       │Buy Portal │       │ ERC-865   │      │ & Reports │
+└───────────┘      └───────────┘       └───────────┘       └───────────┘      └───────────┘
+```
 
-### Mobile App
-1. Clone the repository: `git clone https://github.com/Stabolut/mobile.git`
-2. Navigate to the project directory: `cd mobile`
-3. Install dependencies: `npm install`
-4. For iOS, navigate to the iOS directory (`cd ios`), install CocoaPods dependencies (`pod install`), then return to the project directory (`cd ..`)
-5. Run the app:
-   - Android: `npx react-native run-android`
-   - iOS: `npx react-native run-ios`
+### 📦 Public Repositories
 
-## API Endpoints
-The backend provides various API endpoints for wallet management, fund transfers, staking, and more. Detailed documentation on each endpoint is available within the backend repository.
+| Repository | Description | Tech Stack | Status |
+| :--- | :--- | :--- | :---: |
+| **[`mobile`](https://github.com/Stabolut/mobile)** | Non-custodial mobile wallet with biometric security, staking, and gasless transfers | React Native, Redux, Ethers | 🟢 Active |
+| **[`backend`](https://github.com/Stabolut/backend)** | REST API, WebSockets, and EIP-712 gasless transaction relayer for Arbitrum & XDC | Node.js, Express, MongoDB, Web3 | 🟢 Active |
+| **[`frontend`](https://github.com/Stabolut/frontend)** | Web purchase portal enabling users to buy USB tokens with ETH and BTC | React 18, MetaMask, UniSat | 🟢 Active |
+| **[`smartcontracts`](https://github.com/Stabolut/smartcontracts)** | Core ERC-865 USB Token smart contracts with pre-signed off-chain gasless transfers | Solidity ^0.8.20, Hardhat | 🟢 Active |
+| **[`Audit`](https://github.com/Stabolut/Audit)** | Full smart contract audit suite, Foundry unit tests, treasury engine, and architecture | Solidity, Foundry, Python | 🟢 Active |
+| **[`Whitepaper`](https://github.com/Stabolut/Whitepaper)** | LaTeX source and compiled PDF for the core Stabolut USB and SBL tokenomics | LaTeX, PDF | 🟢 Active |
+| **[`Whitepaper-Mica`](https://github.com/Stabolut/Whitepaper-Mica)** | LaTeX source and regulatory documentation for European MiCA compliance (ESB Token) | LaTeX, Markdown | 🟢 Active |
 
-## Usage
-The USB Token Ecosystem allows for the creation and management of USB wallets, conducting gasless transactions, staking USB tokens, and viewing transaction history through the mobile app. It supports multiple cryptocurrencies, enhancing the user's ability to transact with various digital currencies seamlessly.
+---
 
-## High-Level Process
-The ecosystem follows a structured process flow, including wallet creation and association, transaction initiation and authorization, transaction processing, blockchain integration, and transaction history reporting, ensuring a secure and efficient platform for managing USB cryptocurrency assets.
+## ⚡ Quick Start: Running the Ecosystem Locally
 
-## Contact
-For inquiries, suggestions, or feedback, please reach out to us at press@stabolut.com. We're dedicated to providing a user-friendly and efficient token experience, enhancing the usability and accessibility of the USB token ecosystem.
+### 1. Start Backend & MongoDB
+```bash
+git clone https://github.com/Stabolut/backend.git
+cd backend
+cp .env.example .env
+docker compose up --build
+```
+*API available at `http://localhost:8003` with Swagger docs at `http://localhost:8003/api-docs`.*
+
+### 2. Run the Mobile Wallet
+```bash
+git clone https://github.com/Stabolut/mobile.git
+cd mobile
+npm install
+npm start
+# In a new terminal: npm run android (or npm run ios)
+```
+
+### 3. Run the Web Purchase Portal
+```bash
+git clone https://github.com/Stabolut/frontend.git
+cd frontend
+npm install && npm start
+```
+
+---
+
+## 📄 License & Community
+All code across the Stabolut ecosystem is open-sourced under the **MIT License** (and GPL-3.0 for Whitepapers/Audit specifications).
+- Website: [stabolut.com](https://stabolut.com)
+- Telegram: [t.me/stabolut](https://t.me/stabolut)
+- Twitter: [@stabolut](https://twitter.com/stabolut)
